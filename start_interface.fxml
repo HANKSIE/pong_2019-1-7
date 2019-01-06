@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="450.0" style="-fx-background-color: dimgray;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.start_interface">
+   <children>
+      <BorderPane prefHeight="300.0" prefWidth="450.0">
+         <top>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="450.0" text="Choose your position" textFill="WHITE" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </top>
+         <center>
+            <GridPane prefHeight="194.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="159.0" minHeight="10.0" prefHeight="151.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="81.0" minHeight="10.0" prefHeight="28.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="BIG_Server" mnemonicParsing="false" onMouseEntered="#serverButtonEntered" onMouseExited="#serverButtonExited" prefHeight="160.0" prefWidth="160.0" style="-fx-background-color: #FF4040;" text="Server" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="BIG_Client" mnemonicParsing="false" onMouseEntered="#clientButtonEntered" onMouseExited="#clientButtonExited" prefHeight="160.0" prefWidth="160.0" style="-fx-background-color: Aqua;" text="Client" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="108.0" minWidth="10.0" prefWidth="56.0" />
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="169.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField fx:id="clientIP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="137.0" GridPane.columnIndex="1" />
+                        <Label alignment="CENTER" prefHeight="28.0" prefWidth="23.0" text="IP:" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <GridPane GridPane.rowIndex="1">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="165.0" minWidth="10.0" prefWidth="68.0" />
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="157.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="getIP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseExited="#getIpButtonExited" onMousePressed="#getIpButtonPressed" prefHeight="21.0" prefWidth="35.0" style="-fx-background-color: white;" text="Get">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="Label_serverIP" alignment="CENTER" prefHeight="24.0" prefWidth="123.0" text="Server's IP" textFill="WHITE" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </center>
+         <bottom>
+            <GridPane prefHeight="74.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="37.0" valignment="CENTER" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="setServer" mnemonicParsing="false" onMouseEntered="#setServerEntered" onMouseExited="#setServerExited" onMousePressed="#setServerPressed" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #BF40BF;" text="Set server" textFill="WHITE" />
+                  <Button fx:id="connectToServer" mnemonicParsing="false" onMouseEntered="#connectToServerEntered" onMouseExited="#connectToServerExited" onMousePressed="#connectToServerPressed" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #BF40BF;" text="Connect to server" textFill="WHITE" GridPane.columnIndex="1" />
+                  <GridPane GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.0" minWidth="10.0" prefWidth="60.0" />
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="190.0" minWidth="10.0" prefWidth="165.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="28.0" prefWidth="62.0" text="Result:" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="serverStatus" alignment="CENTER" prefHeight="30.0" prefWidth="165.0" text="status of setting" textFill="WHITE" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="28.0" prefWidth="62.0" text="Result:" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="clientStatus" alignment="CENTER" prefHeight="30.0" prefWidth="165.0" text="status of connecting" textFill="WHITE" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.0" minWidth="10.0" prefWidth="60.0" />
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="190.0" minWidth="10.0" prefWidth="165.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

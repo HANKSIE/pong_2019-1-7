@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: black; -fx-border-color: white; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Label fx:id="serverScore" alignment="CENTER" layoutX="405.0" layoutY="8.0" prefHeight="46.0" prefWidth="95.0" text="0" textFill="#ff6a6a">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="clientScore" alignment="CENTER" layoutX="500.0" layoutY="8.0" prefHeight="46.0" prefWidth="95.0" text="0" textFill="#6788ff">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
