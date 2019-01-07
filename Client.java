@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
@@ -119,7 +120,7 @@ public class Client extends Thread {
                     timer.stop();
                     exit();
                 }else {
-//                    sendMessage = Integer.toString(board2.getDir());
+
                     if (board2.getLayoutY() >= 0) {
 
                         if (board2.getLayoutY() < 10) {
@@ -217,15 +218,17 @@ class ReceiveMessageC implements Runnable {
     @Override
     public void run() {
 
-
+        try {
+            in = s.getInputStream();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         timer = new Timer(SaveReference.getDelay(), new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 try {
-
-                    in = s.getInputStream();
 
                     int n = in.read(mesin);
                     String str = new String(mesin, 0, n);

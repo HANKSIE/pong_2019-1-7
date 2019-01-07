@@ -20,7 +20,7 @@ public class Board extends Element{
 
     public void move(){
 
-        timer = new Timer(SaveReference.getDelay(), new ActionListener() {
+        timer = new Timer(13, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 switch (Dir){

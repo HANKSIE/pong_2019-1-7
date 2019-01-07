@@ -10,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
@@ -281,13 +282,18 @@ class ReceiveMessageS implements Runnable {
     @Override
     public void run() {
 
+        try {
+            in = s.getInputStream();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         timer = new Timer(SaveReference.getDelay(), new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 try {
 
-                    in = s.getInputStream();
                     int n = in.read(mesin);
                     String str = new String(mesin, 0, n);
                     String board2Y="";
